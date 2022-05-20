@@ -140,7 +140,7 @@ namespace TechJobsMVC.Data
                 return;
             }
 
-            List<string[]> rows = new List<string[]>();
+            List<string[]> rows = new List<string[]>();  // this lookz wrong? 
 
 
             using (StreamReader reader = File.OpenText(DATA_FILE))

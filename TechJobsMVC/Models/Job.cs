@@ -31,7 +31,7 @@ namespace TechJobsMVC.Models
         public override string ToString()
         {
             string output = "";
-            if (Name.Equals(""))
+            if (Name.Equals("") || Employer.Value == null)
             {
                 Name = "Data not available";
             }
@@ -51,13 +51,14 @@ namespace TechJobsMVC.Models
             {
                 PositionType.Value = "Data not available";
             }
-
-            output = string.Format("\nID: %d\n" +
+            //%d is decimal %s is string
+            output = string.Format("\nID: %d\n" + 
                     "Name: %s\n" +
                     "Employer: %s\n" +
                     "Location: %s\n" +
                     "Position Type: %s\n" +
-                    "Core Competency: %s\n", Id, Name, Employer, Location, PositionType, CoreCompetency);
+                    "Core Competency: %s\n", Id, Name, Employer, Location, PositionType, CoreCompetency); 
+            // shouldn't these be after : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^     ?
             return output;
         }
 
